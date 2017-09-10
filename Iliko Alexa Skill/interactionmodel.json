@@ -1,0 +1,352 @@
+{
+  "intents": [
+    {
+      "name": "ActivityIntent",
+      "samples": [
+        "Activity",
+        "Record my activity",
+        "I finished {activity}",
+        "I want to record {activity}",
+        "record {activity}",
+        "another activity",
+        "another action",
+        "record an action",
+        "I did {activity}",
+        "I watched {activity}",
+        "I did the {activity}"
+      ],
+      "slots": [
+        {
+          "name": "activity",
+          "type": "activities",
+          "samples": [
+            "{activity}",
+            "I did {activity}",
+            "record {activity}",
+            "I want to record {activity}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "EndSessionIntent",
+      "samples": [
+        "End Session",
+        "End the session"
+      ],
+      "slots": []
+    },
+    {
+      "name": "ReadingIntent",
+      "samples": [
+        "My {typeOfVital} is {vitalValue}",
+        "Take my vitals",
+        "I want to send my {typeOfVital}",
+        "Lets take my {typeOfVital}",
+        "Another Reading",
+        "Another reading my {typeOfVital}",
+        "Another reading my {typeOfVital} is {vitalValue}",
+        "take my {typeOfVital}",
+        "next reading",
+        "take my meassuremerntss ",
+        "Record a reading",
+        "another meassurement "
+      ],
+      "slots": [
+        {
+          "name": "typeOfVital",
+          "type": "typeOfVital",
+          "samples": [
+            "my {typeOfVital}",
+            "{typeOfVital}",
+            "I want to send {typeOfVital}"
+          ]
+        },
+        {
+          "name": "vitalValue",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{vitalValue}",
+            "my {typeOfVital}is {vitalValue}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RecordedActionsIntent",
+      "samples": [
+        "Which actions were recorded",
+        "which activities were recorded",
+        "listen to recorded actions",
+        "listen to previously recorded actions"
+      ],
+      "slots": []
+    },
+    {
+      "name": "RecordedReadingsIntent",
+      "samples": [
+        "Which readings were recorded",
+        "recorded readings",
+        "recorded vitals",
+        "listen to recorded readings"
+      ],
+      "slots": []
+    }
+  ],
+  "types": [
+    {
+      "name": "activities",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "singing",
+            "synonyms": [
+              "song",
+              "sing song"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "play music",
+            "synonyms": [
+              "music"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "household",
+            "synonyms": [
+              "cleaning",
+              "clean"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "garden",
+            "synonyms": [
+              "botanical garden",
+              "visited garden"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "newspaper",
+            "synonyms": [
+              "paper",
+              "reading paper"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "books",
+            "synonyms": [
+              "read book",
+              "book",
+              "Reading"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "cooking",
+            "synonyms": [
+              "baking"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "puzzles",
+            "synonyms": []
+          }
+        },
+        {
+          "id": "video",
+          "name": {
+            "value": "videoFilm",
+            "synonyms": [
+              "familiy video"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "typeOfVital",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "heart rate",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "pulse",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "blood pressure",
+            "synonyms": [
+              "BP"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "body weight",
+            "synonyms": []
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-ActivityIntent.IntentSlot-activity",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which activity do you want to record, for examples see the skill card?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ActivityIntent.IntentSlot-activity",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "So you want to record {activity}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ReadingIntent.IntentSlot-typeOfVital",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which reading to you want to send?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ReadingIntent.IntentSlot-typeOfVital",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Is it correct that you want to send your {typeOfVital}?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ReadingIntent.IntentSlot-vitalValue",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is your {typeOfVital} ?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ReadingIntent.IntentSlot-vitalValue",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "So your {typeOfVital} is {vitalValue}?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "ActivityIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "activity",
+            "type": "activities",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-ActivityIntent.IntentSlot-activity",
+              "confirm": "Confirm.Intent-ActivityIntent.IntentSlot-activity"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ReadingIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "typeOfVital",
+            "type": "typeOfVital",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-ReadingIntent.IntentSlot-typeOfVital",
+              "confirm": "Confirm.Intent-ReadingIntent.IntentSlot-typeOfVital"
+            }
+          },
+          {
+            "name": "vitalValue",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-ReadingIntent.IntentSlot-vitalValue",
+              "confirm": "Confirm.Intent-ReadingIntent.IntentSlot-vitalValue"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
